@@ -25,13 +25,13 @@
         <property name="username" value="root" />
         <property name="password" value="root" />
     </bean>
-    <bean id="myDataSource" class="org.springframework.jdbc.datasource.WebSphereDataSourceAdapter">
-        <property name="targetDataSource">
-            <bean class="org.springframework.jndi.JndiObjectFactoryBean">
-                <property name="jndiName" value="JDBC/LOC1"/>
-            </bean>
-        </property>
-    </bean>
+    <!--<bean id="myDataSource" class="org.springframework.jdbc.datasource.WebSphereDataSourceAdapter">-->
+        <!--<property name="targetDataSource">-->
+            <!--<bean class="org.springframework.jndi.JndiObjectFactoryBean">-->
+                <!--<property name="jndiName" value="JDBC/LOC1"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+    <!--</bean>-->
     <!-- Define SessionFactory bean -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
