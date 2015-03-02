@@ -50,4 +50,23 @@ public class TestPerson extends
         System.out.println("person.UnitEmployeeCode = " + person.getUnitEmployCode());
 
     }
+
+    public void testFetchPersonByEmployeeId(){
+        PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
+        Person person = new Person();
+        String employeeID = "132";
+        person = personService.getPersonByEmployeeId(employeeID);
+        System.out.println("person.getNationalId() = " + person.getNationalId());
+    }
+
+    public void testFetchPersonByNationalId(){
+        PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
+        Person person = personService.getPersonByNationalID("122");
+        System.out.println("person = " + person.getFirstName());
+    }
+    public void testFetchPersonByAccountId(){
+        PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
+        Person person = personService.getPersonByAccountID("100100");
+        System.out.println("person = " + person.getFirstName());
+    }
 }

@@ -32,4 +32,20 @@ public class PersonService {
     public void addPerson(Person person){
         getPersonDao().save(person);
     }
+
+    @Transactional
+    public Person getPersonByEmployeeId(String employeeId){
+        return getPersonDao().getPersonByEmployeeId(employeeId);
+    }
+
+    @Transactional
+    public Person getPersonByNationalID(String nationalId){
+        return getPersonDao().getPersonByNationalID(nationalId);
+    }
+
+    @Transactional
+    public Person getPersonByAccountID(String accountId){
+        return getPersonDao().getPersonByAccountID(accountId);
+    }
+
 }
