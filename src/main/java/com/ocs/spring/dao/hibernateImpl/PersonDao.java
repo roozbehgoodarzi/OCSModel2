@@ -22,9 +22,9 @@ public class PersonDao extends GenericDaoHibernate<Person> {
     private SessionFactory sessionFactory;
 
     public Person getPersonByEmployeeId(String employeeId){
-        String hql = "FROM Person as P WHERE P.UnitEmployCode = :UnitEmployCode";
+        String hql = "FROM Person as P WHERE P.unitEmployCode = :unitEmployCode";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
-        query.setParameter("UnitEmployCode", employeeId);
+        query.setParameter("unitEmployCode", employeeId);
         List<Person> persons = query.list();
         try {
             if(!DbUtil.checkResultExist(persons))
@@ -38,9 +38,9 @@ public class PersonDao extends GenericDaoHibernate<Person> {
     }
 
     public Person getPersonByAccountID(String accountId){
-        String hql = "FROM Person as P WHERE P.AccountId = :AccountId";
+        String hql = "FROM Person as P WHERE P.accountId = :accountId";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
-        query.setParameter("AccountId", accountId);
+        query.setParameter("accountId", accountId);
         List<Person> persons = query.list();
         try {
             if(!DbUtil.checkResultExist(persons))
@@ -53,9 +53,9 @@ public class PersonDao extends GenericDaoHibernate<Person> {
         return persons.get(0);
     }
     public Person getPersonByNationalID(String nationalId){
-        String hql = "FROM Person as P WHERE P.NationalId = :NationalId";
+        String hql = "FROM Person as P WHERE P.nationalId = :nationalId";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
-        query.setParameter("NationalId", nationalId);
+        query.setParameter("nationalId", nationalId);
         List<Person> persons = query.list();
         try {
             if(!DbUtil.checkResultExist(persons))

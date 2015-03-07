@@ -66,7 +66,7 @@ public class TestPerson extends
     }
     public void testFetchPersonByAccountId(){
         PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
-        Person person = personService.getPersonByAccountID("100100");
+        Person person = personService.getPersonByAccountID("177832506");
         System.out.println("person = " + person.getFirstName());
     }
 }
