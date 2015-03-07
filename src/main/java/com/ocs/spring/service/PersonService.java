@@ -32,6 +32,10 @@ public class PersonService {
     public void addPerson(Person person){
         getPersonDao().save(person);
     }
+  @Transactional
+    public void saveOrUpdatePerson(Person person){
+        getPersonDao().saveOrUpdate(person);
+    }
 
     @Transactional
     public Person getPersonByEmployeeId(String employeeId){
