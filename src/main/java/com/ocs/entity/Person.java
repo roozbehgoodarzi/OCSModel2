@@ -12,121 +12,141 @@ import javax.persistence.Table;
 @Table(name = "smpl.PERSON")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person extends AbstractEntity {
-    String PersonId;
-    String FirstName;
-    String LastName;
-    String NationalId;
-    String AccountId;
-    String LimitPayChq;
-    String LimitPayDoc;
-    String LimitCashPay;
-    String LimitCashRcv;
-    String LimitLoan;
-    String LimitLC;
-    String LimitCashArz;
-    String UnitEmployCode;
+    String personId;
+    String firstName;
+    String lastName;
+    String nationalId;
+    String accountId;
+    String limitPayChq;
+    String limitPayDoc;
+    String limitCashPay;
+    String limitCashRcv;
+    String limitLoan;
+    String limitLC;
+    String limitCashArz;
+    String unitEmployCode;
+
+    public Person() {
+        super();
+    }
+
+    public Person(String personId, String firstName, String lastName, String nationalId, String accountId, String limitPayChq, String limitPayDoc, String limitCashPay, String limitCashRcv, String limitLoan, String limitLC, String limitCashArz, String unitEmployCode) {
+        this.personId = personId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.nationalId = nationalId;
+        this.accountId = accountId;
+        this.limitPayChq = limitPayChq;
+        this.limitPayDoc = limitPayDoc;
+        this.limitCashPay = limitCashPay;
+        this.limitCashRcv = limitCashRcv;
+        this.limitLoan = limitLoan;
+        this.limitLC = limitLC;
+        this.limitCashArz = limitCashArz;
+        this.unitEmployCode = unitEmployCode;
+    }
 
     public String getPersonId() {
-        return PersonId;
+        return personId;
     }
 
     public void setPersonId(String personId) {
-        PersonId = personId;
+        this.personId = personId;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getNationalId() {
-        return NationalId;
+        return nationalId;
     }
 
     public void setNationalId(String nationalId) {
-        NationalId = nationalId;
+        this.nationalId = nationalId;
     }
 
     public String getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     public void setAccountId(String accountId) {
-        AccountId = accountId;
+        this.accountId = accountId;
     }
 
     public String getLimitPayChq() {
-        return LimitPayChq;
+        return limitPayChq;
     }
 
     public void setLimitPayChq(String limitPayChq) {
-        LimitPayChq = limitPayChq;
+        this.limitPayChq = limitPayChq;
     }
 
     public String getLimitPayDoc() {
-        return LimitPayDoc;
+        return limitPayDoc;
     }
 
     public void setLimitPayDoc(String limitPayDoc) {
-        LimitPayDoc = limitPayDoc;
+        this.limitPayDoc = limitPayDoc;
     }
 
     public String getLimitCashPay() {
-        return LimitCashPay;
+        return limitCashPay;
     }
 
     public void setLimitCashPay(String limitCashPay) {
-        LimitCashPay = limitCashPay;
+        this.limitCashPay = limitCashPay;
     }
 
     public String getLimitCashRcv() {
-        return LimitCashRcv;
+        return limitCashRcv;
     }
 
     public void setLimitCashRcv(String limitCashRcv) {
-        LimitCashRcv = limitCashRcv;
+        this.limitCashRcv = limitCashRcv;
     }
 
     public String getLimitLoan() {
-        return LimitLoan;
+        return limitLoan;
     }
 
     public void setLimitLoan(String limitLoan) {
-        LimitLoan = limitLoan;
+        this.limitLoan = limitLoan;
     }
 
     public String getLimitLC() {
-        return LimitLC;
+        return limitLC;
     }
 
     public void setLimitLC(String limitLC) {
-        LimitLC = limitLC;
+        this.limitLC = limitLC;
     }
 
     public String getLimitCashArz() {
-        return LimitCashArz;
+        return limitCashArz;
     }
 
     public void setLimitCashArz(String limitCashArz) {
-        LimitCashArz = limitCashArz;
+        this.limitCashArz = limitCashArz;
     }
 
     public String getUnitEmployCode() {
-        return UnitEmployCode;
+        return unitEmployCode;
     }
 
     public void setUnitEmployCode(String unitEmployCode) {
-        UnitEmployCode = unitEmployCode;
+        this.unitEmployCode = unitEmployCode;
     }
 }
