@@ -28,9 +28,9 @@ public class PersonDao extends GenericDaoHibernate<Person> {
         List<Person> persons = query.list();
         try {
             if(!DbUtil.checkResultExist(persons))
-                throw new DaoException("Calling class " + PersonDao.class + " has an error on getPersonByEmployeeId: " + ExceptionReason.NoResult, (short)0);
+                throw new DaoException("Calling class " + PersonDao.class + " has an error on getPersonByPersonId: " + ExceptionReason.NoResult, (short)0);
             if(DbUtil.checkUniqueResult(persons)==false)
-                throw new DaoException("Calling Class " + PersonDao.class + " has an error on getPersonByEmployeeId:" + ExceptionReason.NotUniqueResult, (short) 0);
+                throw new DaoException("Calling Class " + PersonDao.class + " has an error on getPersonByPersonID:" + ExceptionReason.NotUniqueResult, (short) 0);
         } catch (DaoException e) {
             throw new DataAccessException(e, (short) 0);
         }

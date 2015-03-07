@@ -55,7 +55,7 @@ public class TestPerson extends
         PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
         Person person = new Person();
         String personId = "12345";
-        person = personService.getPersonByEmployeeId(personId);
+        person = personService.getPersonByPersonId(personId);
         System.out.println("person.getNationalId() = " + person.getNationalId());
     }
 
