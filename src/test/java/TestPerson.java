@@ -51,11 +51,11 @@ public class TestPerson extends
 
     }
 
-    public void testFetchPersonByEmployeeId(){
+    public void testFetchPersonByPersonId(){
         PersonService personService = (PersonService) OCSModel.getInstance().getServiceInterface(PersonService.class);
         Person person = new Person();
-        String employeeID = "132";
-        person = personService.getPersonByEmployeeId(employeeID);
+        String personId = "12345";
+        person = personService.getPersonByEmployeeId(personId);
         System.out.println("person.getNationalId() = " + person.getNationalId());
     }
 

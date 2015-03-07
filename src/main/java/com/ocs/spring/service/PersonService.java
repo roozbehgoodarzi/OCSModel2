@@ -38,8 +38,8 @@ public class PersonService {
     }
 
     @Transactional
-    public Person getPersonByEmployeeId(String employeeId){
-        return getPersonDao().getPersonByEmployeeId(employeeId);
+    public Person getPersonByEmployeeId(String personId){
+        return getPersonDao().getPersonByPersonId(personId);
     }
 
     @Transactional

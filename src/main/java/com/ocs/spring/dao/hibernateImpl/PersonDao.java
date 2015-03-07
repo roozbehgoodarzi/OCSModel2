@@ -21,10 +21,10 @@ public class PersonDao extends GenericDaoHibernate<Person> {
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 
-    public Person getPersonByEmployeeId(String employeeId){
-        String hql = "FROM Person as P WHERE P.unitEmployCode = :unitEmployCode";
+    public Person getPersonByPersonId(String personId){
+        String hql = "FROM Person as P WHERE P.personId = :personId";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
-        query.setParameter("unitEmployCode", employeeId);
+        query.setParameter("personId", personId);
         List<Person> persons = query.list();
         try {
             if(!DbUtil.checkResultExist(persons))
