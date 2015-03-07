@@ -5,7 +5,7 @@
   </component>
   <component name="IdProvider" IDEtalkID="E81A93608528BC39290C55CE4A279E41" />
   <component name="MavenCompilerTasksManager">
-    <option name="afterCompileTasks">
+    <option name="afterRebuildTask">
       <set>
         <MavenCompilerTask>
           <option name="goal" value="org.apache.maven.plugins:maven-surefire-plugin:2.10:test" />

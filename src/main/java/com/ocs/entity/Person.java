@@ -21,6 +21,7 @@ public class Person extends AbstractEntity {
     String limitPayDoc;
     String limitCashPay;
     String limitCashRcv;
+
     String limitLoan;
     String limitLC;
     String limitCashArz;
