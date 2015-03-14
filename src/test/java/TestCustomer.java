@@ -15,12 +15,19 @@ public class TestCustomer
         CustomerService customerService = (CustomerService) ctx.getBean("CustomerService");
 
         Customer customer = new Customer();
-        customer.setName("Roozbeh29");
-        customer.setSurname("Goodarzi29");
-        customer.setId((int) 335);
+        customer.setNationalId("4490068344");
+        customer.setFirstName("Hamed");
+        customer.setId(3L);
 
-        customerService.addCustomer(customer);
+        customerService.saveOrUpdateCustomer(customer);
         System.out.println("inserted..");
 
+    }
+    public void testCustomerFetchByNationalId(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("testContext.xml");
+        CustomerService customerService = (CustomerService) ctx.getBean("CustomerService");
+
+        Customer customer = customerService.getCustomerByNationalId("4490068344");
+        System.out.println("customer = " + customer.getFirstName());
     }
 }

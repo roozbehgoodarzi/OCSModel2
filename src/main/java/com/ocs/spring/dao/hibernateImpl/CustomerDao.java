@@ -1,14 +1,45 @@
 package com.ocs.spring.dao.hibernateImpl;
 
 import com.ocs.entity.Customer;
+import com.ocs.entity.Person;
+import com.ocs.exception.DaoException;
+import com.ocs.exception.DataAccessException;
+import com.ocs.exception.ExceptionReason;
 import com.ocs.spring.dao.GenericDaoHibernate;
+import com.ocs.util.DbUtil;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by Goodarzi on 10/12/14.
  */
 @Repository
 public class CustomerDao extends GenericDaoHibernate<Customer> {
+
+    @Resource
+    private SessionFactory sessionFactory;
+
+    public Customer getCustomerByNationalId(String nationalId) {
+        String hql = "FROM Customer as C WHERE C.nationalId = :nationalId";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setParameter("nationalId", nationalId);
+        List<Customer> customers = query.list();
+        try {
+            if (!DbUtil.checkResultExist(customers))
+                throw new DaoException("Calling class " + PersonDao.class + " has an error on getPersonByNationalID: " + ExceptionReason.NoResult, (short) 0);
+            if (!DbUtil.checkUniqueResult(customers))
+                throw new DaoException("Calling Class " + PersonDao.class + " has an error on getPersonByNationalID:" + ExceptionReason.NotUniqueResult, (short) 0);
+        } catch (DaoException e) {
+            throw new DataAccessException(e, (short) 0);
+        }
+
+        return customers.get(0);
+    }
+
 //    @Autowired
 //    private SessionFactory sessionFactory;
 

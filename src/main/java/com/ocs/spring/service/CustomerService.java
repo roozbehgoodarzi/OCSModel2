@@ -89,4 +89,14 @@ public class CustomerService {
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
+
+    @Transactional
+    public void saveOrUpdateCustomer(Customer customer){
+        getCustomerDao().saveOrUpdate(customer);
+    }
+
+    @Transactional
+    public Customer getCustomerByNationalId(String nationalId){
+        return getCustomerDao().getCustomerByNationalId(nationalId);
+    }
 }
